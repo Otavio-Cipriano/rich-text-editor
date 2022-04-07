@@ -2,6 +2,7 @@
 const elements = document.querySelectorAll('.btn');
 const fontSelector = document.querySelector('#font-selector')
 const sizeSelector = document.querySelector('#size-selector')
+const colorSelector = document.querySelector('#color-selector')
 const editorContent = document.querySelector(".text-editor-content")
 
 //Event
@@ -26,6 +27,10 @@ sizeSelector.addEventListener('change',()=>{
     setFontSize(sizeSelector.value)
 })
 
+colorSelector.addEventListener('change', ()=>{
+    setFontColor(colorSelector.value)
+})
+
 //Functions
 
 function execCommand(command, value){
@@ -39,4 +44,8 @@ function setFontFamily(font){
 
 function setFontSize(size){
     execCommand('fontSize', size)
+}
+
+function setFontColor(color){
+    execCommand('foreColor', color)
 }
